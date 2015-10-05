@@ -25,7 +25,7 @@ namespace DesignTimeSupport.Windows.ViewModels
 			this.windowManager = windowManager;
 
 			WindowTitle = "Design Time Support Test";
-			WindowContent = DesignTimeHelpers.DesignTimeModels.MainWindowContentViewModel;
+			WindowContent = new MainWindowContentViewModel(IoC.Get<IEventAggregator>(), IoC.Get<IWindowManager>());
 		}
 
 		/// <summary>
