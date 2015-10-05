@@ -1,4 +1,5 @@
 ﻿using Caliburn.Micro;
+using DesignTimeSupport.ContentControls.ViewModels;
 using DesignTimeSupport.Windows.ViewModels;
 using System;
 
@@ -18,6 +19,14 @@ namespace DesignTimeSupport.DesignTimeHelpers
 		public static MainWindowViewModel MainWindowViewModel { get; set; }
 
 		/// <summary>
+		/// Gets or sets the main window content view model.
+		/// </summary>
+		/// <value>
+		/// The main window content view model.
+		/// </value>
+		public static MainWindowContentViewModel MainWindowContentViewModel { get; set; }
+
+		/// <summary>
 		/// Initializes the <see cref="DesignTimeModels"/> class.
 		/// </summary>
 		static DesignTimeModels()
@@ -26,6 +35,7 @@ namespace DesignTimeSupport.DesignTimeHelpers
 			var windowManager = IoC.Get<IWindowManager>();
 
 			MainWindowViewModel = new MainWindowViewModel(eventAggregator, windowManager);
+			MainWindowContentViewModel = new MainWindowContentViewModel(eventAggregator, windowManager);
 		}
 	}
 }

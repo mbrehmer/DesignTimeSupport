@@ -1,4 +1,5 @@
 ﻿using Caliburn.Micro;
+using DesignTimeSupport.ContentControls.ViewModels;
 using System;
 
 namespace DesignTimeSupport.Windows.ViewModels
@@ -11,6 +12,7 @@ namespace DesignTimeSupport.Windows.ViewModels
 		private string _windowTitle;
 		private readonly IEventAggregator eventAggregator;
 		private readonly IWindowManager windowManager;
+		private MainWindowContentViewModel _windowContent;
 
 		/// <summary>
 		/// Initializes a new instance of the <see cref="MainWindowViewModel"/> class.
@@ -23,6 +25,7 @@ namespace DesignTimeSupport.Windows.ViewModels
 			this.windowManager = windowManager;
 
 			WindowTitle = "Design Time Support Test";
+			WindowContent = DesignTimeHelpers.DesignTimeModels.MainWindowContentViewModel;
 		}
 
 		/// <summary>
@@ -38,6 +41,22 @@ namespace DesignTimeSupport.Windows.ViewModels
 			{
 				_windowTitle = value;
 				NotifyOfPropertyChange(() => WindowTitle);
+			}
+		}
+
+		/// <summary>
+		/// Gets or sets the content of the window.
+		/// </summary>
+		/// <value>
+		/// The content of the window.
+		/// </value>
+		public MainWindowContentViewModel WindowContent
+		{
+			get { return _windowContent; }
+			set
+			{
+				_windowContent = value;
+				NotifyOfPropertyChange(() => WindowContent);
 			}
 		}
 	}

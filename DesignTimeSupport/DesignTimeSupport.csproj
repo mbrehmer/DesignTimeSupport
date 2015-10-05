@@ -63,6 +63,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="AppBootstrapper.cs" />
+    <Compile Include="ContentControls\ViewModels\MainWindowContentViewModel.cs" />
+    <Compile Include="ContentControls\Views\MainWindowContentView.xaml.cs">
+      <DependentUpon>MainWindowContentView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DesignTimeHelpers\DesignTimeModels.cs" />
     <Compile Include="Windows\ViewModels\MainWindowViewModel.cs" />
     <Compile Include="App.xaml.cs">
@@ -70,6 +74,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="IShell.cs" />
+    <Page Include="ContentControls\Views\MainWindowContentView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windows\Views\MainWindowView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

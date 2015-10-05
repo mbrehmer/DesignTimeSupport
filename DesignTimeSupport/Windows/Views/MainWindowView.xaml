@@ -10,5 +10,6 @@
 		cal:Bind.AtDesignTime="True"
 		Title="{Binding WindowTitle}">
 	<Grid>
+		<ContentControl x:Name="WindowContent" />
 	</Grid>
 </Window>
