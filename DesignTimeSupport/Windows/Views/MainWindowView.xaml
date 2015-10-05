@@ -4,9 +4,9 @@
 		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
 		xmlns:cal="http://www.caliburnproject.org"
-		xmlns:vm="clr-namespace:DesignTimeSupport.Windows.ViewModels"
+		xmlns:dt="clr-namespace:DesignTimeSupport.DesignTimeHelpers"
 		mc:Ignorable="d"
-		d:DataContext="{d:DesignInstance Type=vm:MainWindowViewModel, IsDesignTimeCreatable=True}"
+		d:DataContext="{Binding Source={x:Static dt:DesignTimeModels.MainWindowViewModel}}"
 		cal:Bind.AtDesignTime="True"
 		Title="{Binding WindowTitle}">
 	<Grid>

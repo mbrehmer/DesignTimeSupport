@@ -9,12 +9,19 @@ namespace DesignTimeSupport.Windows.ViewModels
 	public class MainWindowViewModel : PropertyChangedBase, IShell
 	{
 		private string _windowTitle;
+		private readonly IEventAggregator eventAggregator;
+		private readonly IWindowManager windowManager;
 
 		/// <summary>
 		/// Initializes a new instance of the <see cref="MainWindowViewModel"/> class.
 		/// </summary>
-		public MainWindowViewModel()
+		/// <param name="eventAggregator">The event aggregator.</param>
+		/// <param name="windowManager">The window manager.</param>
+		public MainWindowViewModel(IEventAggregator eventAggregator, IWindowManager windowManager)
 		{
+			this.eventAggregator = eventAggregator;
+			this.windowManager = windowManager;
+
 			WindowTitle = "Design Time Support Test";
 		}
 
